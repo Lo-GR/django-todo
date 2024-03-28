@@ -3,8 +3,59 @@ body {
   width: 100%
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Noto Sans", sans-serif;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+button {
+  background: WhiteSmoke;
+  color: #000;
+  padding: 9px 15px;
+  border: 1px solid silver;
+  border-radius: 15px;
+}
+
+.buttonLink {
+  background: WhiteSmoke;
+  color: #000;
+  padding: 9px 15px;
+  border: 1px solid silver;
+  border-radius: 15px;
+  max-width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonLink a {
+  text-decoration: none;
+  color: black
+}
+
+button:hover,
+button:focus {
+  background: #fff;
+  cursor: pointer;
+}
+
 .container {
   max-width: 550px;
   margin: auto;
   background-color: white
+}
+
+.headerBar {
+  display: flex;
+  justify-content: center;
+  /* color: white; */
+  padding: 10px;
+  border-radius: 5px 5px 0 0;
+  background-color: #99ccff;
 }

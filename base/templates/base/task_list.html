@@ -1,9 +1,12 @@
 {% extends 'base/main.html' %}
 {% block content %}
 
-
-{% if request.user.is_authenticated %}
-  <p>{{request.user}}</p>
+<div class='headerBar'>
+  <div>
+      <h1>Hello {{request.user|title}}</h1>
+      <h2 stlye='margin:0'>Remaining Task{{ count|pluralize:'s'}} to Complete: {{count}}</h2>
+  </div>
+  {% if request.user.is_authenticated %}
   <form action="{% url 'logout' %}" method="post">
       {% csrf_token %}
       <button type="submit">Logout</button>
@@ -12,12 +15,18 @@
   {% else %}
   <a href="{% url 'login' %}">Login</a>
 {% endif %}
+</div>
+
+
 
 <hr>
-<h1>My To Do List</h1>
-<a href="{% url 'task-create' %}"> Add Task</a>
 
-<p>Remaining Taks to Complete: {{count}}</p>
+<div class='buttonLink'>
+  <a href="{% url 'task-create' %}"> Add Task</a>
+</div>
+
+
+<p></p>
 <form method='GET'>
   <input type='text' name='search-area' value="{{search_input}}">
   <button type="submit">Search</button>
@@ -41,9 +50,15 @@
       {{task.title}}
     </td>
     <td>
-      <a href="{% url 'task' task.id %}">View</a>
-      <a href="{% url 'task-update' task.id %}">Edit</a>
-      <a href="{% url 'task-delete' task.id %}">Delete</a>
+      <div style='background:#80ed98' class='buttonLink'>
+        <a href="{% url 'task' task.id %}">VIEW</a>
+      </div>
+      <div style='background:#80bced' class='buttonLink'>
+        <a href="{% url 'task-update' task.id %}">EDIT</a>
+      </div>
+      <div style='background:#ffcccb' class='buttonLink'>
+        <a href="{% url 'task-delete' task.id %}">DELETE</a>
+      </div>
     </td>
   </tr>
   {% empty %}
