@@ -1,3 +1,13 @@
-<h1> Task </h1>
-<a href="{% url 'tasks' %}">Back</a>
-<h2> {{ task }} </h2>
+{% extends 'base/main.html' %}
+{% block content %}
+
+<div style='height: 250px'>
+  <div class='headerBar'>
+    <h1> Task </h1>
+  </div>
+  <hr>
+  <a class='buttonLink' style='text-decoration:none;margin:20px' href="{% url 'tasks' %}">Back</a>
+  <h2 style='margin:20px'> {{ task }} </h2>
+</div>
+
+{% endblock content %}

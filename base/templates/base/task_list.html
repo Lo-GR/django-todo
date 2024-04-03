@@ -21,43 +21,48 @@
 
 <hr>
 
-<div class='buttonLink'>
-  <a href="{% url 'task-create' %}"> Add Task</a>
-</div>
+
 
 
 <p></p>
-<form method='GET'>
-  <input type='text' name='search-area' value="{{search_input}}">
-  <button type="submit">Search</button>
-</form>
-<form method='GET'>
-  <input style='display:none' type='text' name='search-area' value="">
-  <button type="submit">Reset</button>
-</form>
-<table>
+
+<div id='controls'>
+  <div style='display:flex'>
+  <form method='GET'>
+    <input type='text' name='search-area' value="{{search_input}}">
+    <button type="submit">Search</button>
+  </form>
+  <form method='GET'>
+    <input style='display:none' type='text' name='search-area' value="">
+    <button type="submit">Reset</button>
+  </form>
+</div>
+  <div class='buttonLink'>
+    <a href="{% url 'task-create' %}"> Add Task</a>
+  </div>
+</div>
+
+<table style='width:100%'>
   <tr>
     <th>
-      Item
     </th>
     <th>
-      Link
     </th>
   </tr>
   {% for task in tasks %}
-  <tr>
+  <tr style='width:100%'>
     <td>
-      {{task.title}}
+      <a href="{% url 'task' task.id %}"><h3 style='margin-left:20px'>{{task.title}}</h3></a>
     </td>
-    <td>
-      <div style='background:#80ed98' class='buttonLink'>
+    <td class='buttonLinks'>
+      {% comment %} <div style='background:#80ed98' class='buttonLink'>
         <a href="{% url 'task' task.id %}">VIEW</a>
-      </div>
+      </div> {% endcomment %}
       <div style='background:#80bced' class='buttonLink'>
         <a href="{% url 'task-update' task.id %}">EDIT</a>
       </div>
       <div style='background:#ffcccb' class='buttonLink'>
-        <a href="{% url 'task-delete' task.id %}">DELETE</a>
+        <a href="{% url 'task-delete' task.id %}">X</a>
       </div>
     </td>
   </tr>
