@@ -58,12 +58,10 @@
       {% comment %} <div style='background:#80ed98' class='buttonLink'>
         <a href="{% url 'task' task.id %}">VIEW</a>
       </div> {% endcomment %}
-      <div style='background:#80bced' class='buttonLink'>
+      <div  class='buttonLink'>
         <a href="{% url 'task-update' task.id %}">EDIT</a>
       </div>
-      <div style='background:#ffcccb' class='buttonLink'>
         <a href="{% url 'task-delete' task.id %}">X</a>
-      </div>
     </td>
   </tr>
   {% empty %}

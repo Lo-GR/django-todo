@@ -19,7 +19,17 @@ button {
   color: #000;
   padding: 9px 15px;
   border: 1px solid silver;
-  border-radius: 15px;
+  border-radius: 5px;
+}
+
+a {
+  text-decoration: none;
+}
+
+input {
+  padding: 10px;
+  border: 1px solid silver;
+  border-radius: 5px;
 }
 
 #controls {
@@ -40,7 +50,7 @@ button {
   color: #000;
   padding: 9px 15px;
   border: 1px solid silver;
-  border-radius: 15px;
+  border-radius: 5px;
   max-width: 100px;
   display: flex;
   justify-content: center;
