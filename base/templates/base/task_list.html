@@ -55,13 +55,8 @@
       <a href="{% url 'task' task.id %}"><h3 style='margin-left:20px'>{{task.title}}</h3></a>
     </td>
     <td class='buttonLinks'>
-      {% comment %} <div style='background:#80ed98' class='buttonLink'>
-        <a href="{% url 'task' task.id %}">VIEW</a>
-      </div> {% endcomment %}
-      <div  class='buttonLink'>
-        <a href="{% url 'task-update' task.id %}">EDIT</a>
-      </div>
-        <a href="{% url 'task-delete' task.id %}">X</a>
+        <a style='font-size: 48px;
+        color: grey;' href="{% url 'task-delete' task.id %}">&#215;</a>
     </td>
   </tr>
   {% empty %}

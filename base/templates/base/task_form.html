@@ -2,7 +2,7 @@
 {% block content %}
 
 <h3>Task Form</h3>
-<a href="{% url 'tasks' %}">Back</a>
+<a href="{% url 'task' task.id %}">Back</a>
 
 <form method='POST' action=''>
   {% csrf_token %}
