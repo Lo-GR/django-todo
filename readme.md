@@ -1,6 +1,6 @@
 How to Run (open terminal in root dir)
-- Run python manage.py migrate
 - Ensure Python installed
+- Run python manage.py migrate
 - Run python manage.py runserver
 - follow url in terminal
 - create user (user gets logged in automatically)
