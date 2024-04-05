@@ -16,15 +16,20 @@
   <div>
 
   </div>
+  <h2> Description: </h2>
   <p> {{ task.description }} </p>
   
+  <hr>
   <div class='buttonLinks'>
     <form method='POST' action=''>
       {% csrf_token %}
-      {{form}}
-      <button type='submit'>Submit</button>
+      <div style='display:flex; align-items: center;    width: 200px;
+      justify-content: space-evenly;'>
+        {{form}}
+      <button style='padding:5px; border:none;' type='submit'>UPDATE</button>
+    </div>
     </form>
-    <a class='buttonLink' href="{% url 'task-update' task.id %}">EDIT</a>
+    <a class='buttonLink' style='padding:10px; border:none;font-size:13.33px' href="{% url 'task-update' task.id %}">EDIT</a>
     <a style='font-size: 48px;color: grey;' href="{% url 'task-delete' task.id %}">&#215;</a>
   </div>
 </div>
