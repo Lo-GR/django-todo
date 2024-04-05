@@ -29,7 +29,7 @@
 <div id='controls'>
   <div style='display:flex'>
   <form method='GET'>
-    <input type='text' name='search-area' value="{{search_input}}">
+    <input style='width: auto;' type='text' name='search-area' value="{{search_input}}">
     <button type="submit">Search</button>
   </form>
   <form method='GET'>
@@ -74,7 +74,10 @@
     </td>
   </tr>
   {% empty %}
-  <h3>No Items in list</h3>
+  <div class='contentContainer'>
+    <h3>No Items in list</h3>
+  </div>
+  
   {% endfor %}
 </table>
 

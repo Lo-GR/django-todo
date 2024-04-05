@@ -1,11 +1,25 @@
 {% extends 'base/main.html' %}
 {% block content %}
 
-<a href="{% url 'tasks' %}">Back</a>
-<form method='POST'>
-  {% csrf_token %}
-  <p>Are you sure you want to delete "{{task}}"? </p>
-  <button type='submit'> Delete </button>
-</form>
+<div >
+  <div class='headerBar' style='align-items:center'>
+    <a style='font-size: 48px;
+    color: grey;' href="{% url 'tasks' %}">&#8592;</a>
+    <div style='width: 80%;
+    display: flex;
+    justify-content: center;'>
+    <h3 style='margin: 0'>  Are you sure you want to delete "{{task}}"? </h3>
+  </div>
+    
+</div>
+<hr>
+
+<div class='contentContainer'>
+  <form method='POST'>
+    {% csrf_token %}
+    <button type='submit'> Delete </button>
+  </form>
+</div>
+
 
 {% endblock content %}

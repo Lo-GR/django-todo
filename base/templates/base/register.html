@@ -1,15 +1,30 @@
 {% extends 'base/main.html' %}
 {% block content %}
 
-<h1>Register</h1>
+<div >
+  <div class='headerBar' style='align-items:center'>
+    <a style='font-size: 48px;
+    color: grey;' href="{% url 'tasks' %}">&#8592;</a>
+    <div style='width: 80%;
+    display: flex;
+    justify-content: center;'>
+      <h1>  Register </h1>
+    </div>
+    
+  </div>
+    
+</div>
+<hr>
+
+<div class='contentContainer'>
+  <form method='POST' action=''>
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type='submit'>Register</button>
+  </form>
+</div>
 
 
-<form method='POST' action=''>
-  {% csrf_token %}
-  {{form.as_p}}
-  <button type='submit'>Register</button>
-</form>
 
-<a href="{% url 'login' %}">Go Back to Login</a>
 
 {% endblock content %}
