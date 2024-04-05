@@ -55,8 +55,10 @@ class TaskList(LoginRequiredMixin, ListView):
     context['search_input'] = search_input
     return context
   
-class TaskDetail(LoginRequiredMixin, DetailView):
+class TaskDetail(LoginRequiredMixin, DetailView, UpdateView):
   model = Task
+  fields = ['complete']
+  success_url = reverse_lazy('tasks')
   context_object_name = 'task'
   template_name = 'base/task.html'
   

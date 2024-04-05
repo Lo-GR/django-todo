@@ -42,6 +42,7 @@ input {
   display: flex;
   width: 100%;
   justify-content: space-around;
+  align-items: center;
 
 }
 
@@ -55,7 +56,7 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 16px;
+  max-height: 20px;
 }
 
 .buttonLink a {
@@ -72,7 +73,8 @@ button:focus {
 .container {
   max-width: 550px;
   margin: auto;
-  background-color: white
+  background-color: white;
+  border-radius: 10px;
 }
 
 .headerBar {

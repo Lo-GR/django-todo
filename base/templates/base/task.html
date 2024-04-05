@@ -1,13 +1,32 @@
 {% extends 'base/main.html' %}
 {% block content %}
 
-<div style='height: 250px'>
-  <div class='headerBar'>
-    <h1>  {{ task }} </h1>
+<div >
+  <div class='headerBar' style='align-items:center'>
+    <a style='font-size: 48px;
+    color: grey;' href="{% url 'tasks' %}">&#8592;</a>
+    <div style='width: 80%;
+    display: flex;
+    justify-content: center;'>
+      <h1>  {{ task }} </h1>
+    </div>
+    
   </div>
   <hr>
-  <a class='buttonLink' style='text-decoration:none;margin:20px' href="{% url 'tasks' %}">Back</a>
-  <a href="{% url 'task-update' task.id %}">EDIT</a>
+  <div>
+
+  </div>
+  <p> {{ task.description }} </p>
+  
+  <div class='buttonLinks'>
+    <form method='POST' action=''>
+      {% csrf_token %}
+      {{form}}
+      <button type='submit'>Submit</button>
+    </form>
+    <a class='buttonLink' href="{% url 'task-update' task.id %}">EDIT</a>
+    <a style='font-size: 48px;color: grey;' href="{% url 'task-delete' task.id %}">&#215;</a>
+  </div>
 </div>
 
 {% endblock content %}
